@@ -25,9 +25,15 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // remember for jdbc you would need to add a database driver h2database/mysql or oracle
+	// and make sure you provide the jdbc connection data source too
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation group: 'com.h2database', name: 'h2', version: '1.3.148'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// you need to install lombok plugin otherwise there would be build error in intellij
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
